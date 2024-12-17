@@ -48,7 +48,7 @@ return {
       })
       lspconfig.ruby_lsp.setup({
         capabilities = capabilities,
-        cmd = { "$HOME/.asdf/shims/ruby-lsp" }
+        cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp" }
       })
       lspconfig.stimulus_ls.setup({
         capabilities = capabilities
