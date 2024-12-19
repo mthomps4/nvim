@@ -21,19 +21,19 @@ return {
       })
     end
   },
-  {
-    "hrsh7th/cmp-nvim-lsp"
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require("cmp").setup({
-        sources = {
-          { name = 'nvim_lsp' }
-        }
-      })
-    end
-  },
+  -- {
+  --   "hrsh7th/cmp-nvim-lsp"
+  -- },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   config = function()
+  --     require("cmp").setup({
+  --       sources = {
+  --         { name = 'nvim_lsp' }
+  --       }
+  --     })
+  --   end
+  -- },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
