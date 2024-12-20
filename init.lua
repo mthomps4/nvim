@@ -56,6 +56,10 @@ vim.opt.shiftwidth = 2
 vim.g.snacks_animate = false
 vim.g.autoformat = true
 vim.g.format_on_save = true
+-- -- ruby
+-- vim.g.ruby_lsp = "ruby_lsp"
+-- vim.g.ruby_formatter = "auto" -- rubocop standard
+
 vim.g.mapleader = " "
 
 -- vim.api.nvim_create_autocmd("BufWritePre", {
