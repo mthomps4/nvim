@@ -13,6 +13,7 @@ vim.keymap.set("c", "wQ", "wq")
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
 vim.keymap.set("c", "Q!", "q!")
+-- Lazy Vim Ports
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
@@ -24,7 +25,6 @@ vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<c
 vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer" })
--- Lazy Vim Port
 -- better up/down
 -- vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 -- vim.keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -57,11 +57,12 @@ vim.g.snacks_animate = false
 vim.g.autoformat = true
 vim.g.format_on_save = true
 
+-- The only way I could get format on save to fire
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    if vim.lsp.buf.format then
-      vim.lsp.buf.format({ async = false }) -- ensure file is finished formatting before saving
-    end
-  end,
+	pattern = "*",
+	callback = function()
+		if vim.lsp.buf.format then
+			vim.lsp.buf.format({ async = false }) -- ensure file is finished formatting before saving
+		end
+	end,
 })
