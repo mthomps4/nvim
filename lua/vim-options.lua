@@ -52,6 +52,7 @@ vim.opt.splitkeep = "screen"
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
+vim.opt.swapfiles = true
 
 vim.g.snacks_animate = false
 vim.g.autoformat = true
@@ -59,10 +60,10 @@ vim.g.format_on_save = true
 
 -- The only way I could get format on save to fire
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function()
-		if vim.lsp.buf.format then
-			vim.lsp.buf.format({ async = false }) -- ensure file is finished formatting before saving
-		end
-	end,
+  pattern = "*",
+  callback = function()
+    if vim.lsp.buf.format then
+      vim.lsp.buf.format({ async = false }) -- ensure file is finished formatting before saving
+    end
+  end,
 })
