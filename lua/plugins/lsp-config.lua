@@ -38,8 +38,8 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
@@ -49,10 +49,9 @@ return {
         capabilities = capabilities
       })
 
-      vim.cmd("echo 'Resolved ruby-lsp path: " .. vim.fn.expand("~/.asdf/shims/ruby-lsp") .. "'")
       lspconfig.ruby_lsp.setup({
         capabilities = capabilities,
-        cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") }
+        -- cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") }
       })
 
       lspconfig.stimulus_ls.setup({
@@ -64,7 +63,7 @@ return {
       vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-      vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format file" })
+      vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format File" })
     end,
   },
 }
