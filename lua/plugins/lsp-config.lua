@@ -38,7 +38,9 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
         capabilities = capabilities
@@ -46,10 +48,13 @@ return {
       lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
+
+      vim.cmd("echo 'Resolved ruby-lsp path: " .. vim.fn.expand("~/.asdf/shims/ruby-lsp") .. "'")
       lspconfig.ruby_lsp.setup({
         capabilities = capabilities,
-        cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp" }
+        cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") }
       })
+
       lspconfig.stimulus_ls.setup({
         capabilities = capabilities
       })

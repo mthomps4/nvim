@@ -49,8 +49,11 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "screen"
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
 vim.g.snacks_animate = false
--- formatting 
 vim.g.autoformat = true
 vim.g.format_on_save = true
 vim.g.mapleader = " "
