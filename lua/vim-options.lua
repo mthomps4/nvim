@@ -52,7 +52,7 @@ vim.opt.splitkeep = "screen"
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.swapfiles = true
+vim.opt.swapfile = false
 
 vim.g.snacks_animate = false
 vim.g.autoformat = true
