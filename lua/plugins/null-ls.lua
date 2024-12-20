@@ -32,17 +32,6 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.completion.nvim_snippets,
 				-- rails
-				-- Rubocop formatter
-				-- null_ls.builtins.formatting.rubocop.with({
-				-- 	command = "./bin/rubocop",
-				-- 	args = { "--auto-correct", "." }, -- adds bundle exec
-				-- }),
-				--
-				-- -- Diagnostics with rubocop
-				-- null_ls.builtins.diagnostics.rubocop.with({
-				-- 	command = "./bin/rubocop",
-				-- 	args = { "--stderr", "." }, -- adds bundle exec
-				-- }),
 				-- null_ls.builtins.formatting.rubocop,
 				-- null_ls.builtins.diagnostics.rubocop,
 				-- null_ls.builtins.formatting.rubocop.with({
