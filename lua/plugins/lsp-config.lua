@@ -54,11 +54,15 @@ return {
       --   end,
       -- })
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover documentation" })
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
       vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format File" })
     end,
   },
